@@ -29,7 +29,7 @@ const CardBox = styled.div
     flex-wrap: wrap;
     `;
 
-interface CardProps {
+export interface CardProps {
     cards: CardInterface[];
 }
 

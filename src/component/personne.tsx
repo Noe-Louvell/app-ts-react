@@ -96,7 +96,7 @@ const TextCard = styled.p
     
 `;
 
-interface PersonneProps {
+export interface PersonneProps {
     datas: api[];
 }
 
@@ -125,17 +125,16 @@ const PersonneItem: React.FC<api> = ({ userId, id, title, body, option = "Defaul
                 <h4 >{title}</h4>
             </TitreCard>
 
-
-
             <IDCard>
                 <h5>User : {userId}</h5>
                 <h5>Id : {id}</h5>
                 <h5>Option : {option}</h5>
             </IDCard>
 
-           
         </ContenuCard>
+
         <TextCard> {body}</TextCard>
+    
     </SkeletonCard>
 }
 
