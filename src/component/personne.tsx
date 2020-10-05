@@ -3,13 +3,24 @@ import styled from 'styled-components'
 import api from '../interface/api';
 
 
+
+const CardBox = styled.div
+    `
+    margin-top: 2%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    text-align:center
+    
+    
+    `;
+
 const SkeletonCard = styled.div
     ` 
+    margin-right:2%;
+    margin-left:2%;
     background-color: whitesmoke;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: column;
+    height: 16em;
     padding: 10px;
     border-radius: 10px;
     width: 20%;
@@ -18,34 +29,34 @@ const SkeletonCard = styled.div
     -moz-box-shadow: 7px 10px 28px -2px rgba(0,0,0,0.63);
     box-shadow: 7px 10px 28px -2px rgba(0,0,0,0.63);
     color: darkslategray;
-
-    :hover{
-        background-color: darkslategray;
-        color:white;
-
-        .fizPPz{
-            visibility: hidden;
-        }
-        
-        .hHBHJR{
-            visibility: hidden;
-        }
-        
-    } 
-
     
+    :hover{
+        background-color: grey;
+        color: white;
+        .hjuRyi{
+            visibility: hidden;
+        }
+        
+        .kRtyBP{
+            visibility: hidden;
+        }
+        
+        .FbUZu{
+            visibility: visible;
+        }
+    } 
 `;
 
-const CardBox = styled.div
+
+const ContenuCard = styled.div
     `
-    margin-top: 5%;
+    margin-top: 30px;
     display: flex;
-    justify-content: space-evenly;
-    width: 80%;
-    flex-wrap: wrap;
-    
-    
-    `;
+    min-height: 150px ;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+`;
 
 const TitreCard = styled.div
     `
@@ -73,9 +84,18 @@ const IDCard = styled.div
         margin-bottom:0;
         margin-top:0;
     }
+`;
 
+const TextCard = styled.p
+    `
+    z-index:50;
+    position:relative;
+    visibility: hidden;
+    position:relative;
+    bottom:50%;
     
 `;
+
 interface PersonneProps {
     datas: api[];
 }
@@ -100,17 +120,22 @@ export const Personne: React.FC<PersonneProps> = ({ datas }: PersonneProps) => {
 const PersonneItem: React.FC<api> = ({ userId, id, title, body, option = "Default Option" }: api) => {
     return <SkeletonCard>
 
-        <TitreCard>
-            <h4 >{title}</h4>
-        </TitreCard>
+        <ContenuCard>
+            <TitreCard>
+                <h4 >{title}</h4>
+            </TitreCard>
 
 
 
-        <IDCard>
-            <h5>User : {userId}</h5>
-            <h5>Id : {id}</h5>
-            <h5>Option : {option}</h5>
-        </IDCard>
+            <IDCard>
+                <h5>User : {userId}</h5>
+                <h5>Id : {id}</h5>
+                <h5>Option : {option}</h5>
+            </IDCard>
+
+           
+        </ContenuCard>
+        <TextCard> {body}</TextCard>
     </SkeletonCard>
 }
 
