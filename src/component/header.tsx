@@ -1,31 +1,50 @@
 import React from 'react';
 
-import {Card} from './card'
+import { Card } from './card'
+import styled from 'styled-components'
+
+const HeaderStyle = styled.div
+    ` background-color: #282c34;
+min-height: 20vh;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+font-size: calc(10px + 2vmin);
+color: white;
+`;
+
+const Title = styled.h1 
+`
+    text-transform: uppercase;
+    font-size:1.5em;
+`;
+const SubTitle = styled.h4 
+`
+    font-size:1em;
+`;
 
 const headerCard = [
     {
-        CardTitle: "Header title",
-        CardText: "Header text",
+        CardTitle: "Premier projet",
+        CardText: "Ah Oui",
     },
     {
-        CardTitle: "Header title2",
-        CardText: "Header text2",
+        CardTitle: "Deuxième projet",
+        CardText: "Ah Non",
     }
 ]
 
 
 function Header() {
     return (
-        <div className="header">
-            <h1>
-                Ceci est un Header
-            </h1>
-            <h4>Avec des cards</h4>
-            <div className="card-box">
-                <Card cards={headerCard} />
-                
-            </div>
-        </div>
+        <HeaderStyle>
+
+            <Title> Ceci est un Header </Title>
+            <SubTitle>Avec des cards</SubTitle>
+
+            <Card cards={headerCard} />
+        </HeaderStyle>
     );
 }
 

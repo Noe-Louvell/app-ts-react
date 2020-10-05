@@ -3,18 +3,23 @@ import React from 'react';
 import Header from './component/header'
 import Body from './component/body'
 import Footer from './component/footer'
+import styled from 'styled-components'
 
-import './App.css';
+
+const AppStyle = styled.div
+`
+  text-align: center;
+`;
 
 function App() {
   return (
-    <div className="App">
+    <AppStyle>
       
         <Header/>
         <Body/>
         <Footer/>
       
-    </div>
+    </AppStyle>
   );
 }
 
