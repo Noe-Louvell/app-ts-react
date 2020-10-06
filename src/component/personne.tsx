@@ -33,15 +33,15 @@ const SkeletonCard = styled.div
     :hover{
         background-color: #bbd030;
         
-        .TitreCard{
+        #TitreCard{
             visibility: hidden;
         }
         
-        .IDCard{
+        #IDCard{
             visibility: hidden;
         }
         
-        #text{
+        #TextCard{
             visibility: visible;
         }
     } 
@@ -123,24 +123,24 @@ export const PersonneItem: React.FC<api> = ({ userId, id, title, body, option = 
     return <SkeletonCard>
 
         <ContenuCard>
-            <div className="TitreCard">
-                <TitreCard>
-                    <h4 >{title}</h4>
-                </TitreCard>
-            </div>
 
-            <div className="IDCard">
-                <IDCard>
-                    <h5>User : {userId}</h5>
-                    <h5>Id : {id}</h5>
-                    <h5>Option : {option}</h5>
-                </IDCard>
-            </div>
+            <TitreCard id="TitreCard">
+                <h4 >{title}</h4>
+            </TitreCard>
+
+
+
+            <IDCard id="IDCard">
+                <h5>User : {userId}</h5>
+                <h5>Id : {id}</h5>
+                <h5>Option : {option}</h5>
+            </IDCard>
+
 
 
         </ContenuCard>
 
-            <TextCard id="text"> {body}</TextCard>
+        <TextCard id="TextCard"> {body}</TextCard>
 
 
 

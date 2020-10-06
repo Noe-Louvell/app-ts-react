@@ -43,7 +43,7 @@ export const Card: React.FC<CardProps> = ({ cards }: CardProps) => {
     </CardBox>
 }
 
-const CardItem: React.FC<CardInterface> = ({ CardTitle, CardText }: CardInterface) => {
+export const CardItem: React.FC<CardInterface> = ({ CardTitle, CardText }: CardInterface) => {
     return <SkeletonCard>
 
         <h3>{CardTitle}</h3>
