@@ -19,7 +19,7 @@ const SkeletonCard = styled.div
     ` 
     margin-right:2%;
     margin-left:2%;
-    background-color: whitesmoke;
+    background-color: #008ba2;
     height: 16em;
     padding: 10px;
     border-radius: 10px;
@@ -28,20 +28,20 @@ const SkeletonCard = styled.div
     -webkit-box-shadow: 7px 10px 28px -2px rgba(0,0,0,0.63);
     -moz-box-shadow: 7px 10px 28px -2px rgba(0,0,0,0.63);
     box-shadow: 7px 10px 28px -2px rgba(0,0,0,0.63);
-    color: darkslategray;
+    color: white;
     
     :hover{
-        background-color: grey;
-        color: white;
-        .hjuRyi{
+        background-color: #bbd030;
+        
+        .TitreCard{
             visibility: hidden;
         }
         
-        .kRtyBP{
+        .IDCard{
             visibility: hidden;
         }
         
-        .FbUZu{
+        #text{
             visibility: visible;
         }
     } 
@@ -93,6 +93,8 @@ const TextCard = styled.p
     visibility: hidden;
     position:relative;
     bottom:50%;
+    text-align:center;
+    
     
 `;
 
@@ -117,24 +119,31 @@ export const Personne: React.FC<PersonneProps> = ({ datas }: PersonneProps) => {
 
 }
 
-const PersonneItem: React.FC<api> = ({ userId, id, title, body, option = "Default Option" }: api) => {
+export const PersonneItem: React.FC<api> = ({ userId, id, title, body, option = "Default Option" }: api) => {
     return <SkeletonCard>
 
         <ContenuCard>
-            <TitreCard>
-                <h4 >{title}</h4>
-            </TitreCard>
+            <div className="TitreCard">
+                <TitreCard>
+                    <h4 >{title}</h4>
+                </TitreCard>
+            </div>
 
-            <IDCard>
-                <h5>User : {userId}</h5>
-                <h5>Id : {id}</h5>
-                <h5>Option : {option}</h5>
-            </IDCard>
+            <div className="IDCard">
+                <IDCard>
+                    <h5>User : {userId}</h5>
+                    <h5>Id : {id}</h5>
+                    <h5>Option : {option}</h5>
+                </IDCard>
+            </div>
+
 
         </ContenuCard>
 
-        <TextCard> {body}</TextCard>
-    
+            <TextCard id="text"> {body}</TextCard>
+
+
+
     </SkeletonCard>
 }
 
